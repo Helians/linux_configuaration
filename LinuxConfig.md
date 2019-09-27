@@ -57,7 +57,7 @@
 - Give the permissions to the files: `chmod 700 .ssh` and `chmod 644 .ssh/authorized_keys`
 - Check in `cat /etc/ssh/sshd_config` file if PasswordAuthentication is set to no
 - Restart SSH: `sudo service ssh restart`
-- On the local machine, run: `ssh -i ~/.ssh/grader_key -p 2200 grader@13.235.19.244`
+- On the local machine, run: `ssh -i ~/.ssh/grader_key.pem -p 2200 grader@13.235.19.244`
 
 # Prepare to deploy your project
 
