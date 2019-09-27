@@ -100,14 +100,16 @@
 - Create FlaskApp.conf to edit: `sudo nano /etc/apache2/sites-available/FlaskApp.conf`
 - Add the following lines of code to the file to configure the virtual host
 
-  ```<VirtualHost *:80>
+ ```
+  <VirtualHost *:80>
 	ServerName 13.235.19.244
 	WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
 	<Directory /var/www/FlaskApp/FlaskApp/>
 		Order allow,deny
 		Allow from all
 	</Directory>
-</VirtualHost>```
+  </VirtualHost>
+```
 
 - `sudo a2ensite FlaskApp`
 
@@ -116,11 +118,13 @@
   `sudo vim flaskapp.wsgi`
 
 - Add the following lines of code to the flaskapp.wsgi file:
-  ```import sys
-  import logging
-  logging.basicConfig(stream=sys.stderr)
-  sys.path.insert(0,"/var/www/FlaskApp/")
+  ```
+	  import sys
+	  import logging
+	  logging.basicConfig(stream=sys.stderr)
+	  sys.path.insert(0,"/var/www/FlaskApp/")
 
-  from FlaskApp import app as application
-  application.secret_key = 'Add your secret key' ```
+	  from FlaskApp import app as application
+	  application.secret_key = 'Add your secret key' 
+  ```
  - `sudo service apache2 restart`
