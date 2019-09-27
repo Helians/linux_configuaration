@@ -128,3 +128,10 @@
 	  application.secret_key = 'Add your secret key' 
   ```
  - `sudo service apache2 restart`
+
+## 12. Hosting instance
+- Once your instance has started up, you can log into it with SSH from your browser.
+
+- The public IP address of the instance is displayed along with its name. For me it is **13.235.19.244**.
+
+**Note:** When you set up OAuth for your application, you will need a DNS name that refers to your instance's IP address. You can use the xip.io service to get one; this is a public service offered for free by Basecamp. For instance, the DNS name 13.235.19.244.xip.io refers to the server above
